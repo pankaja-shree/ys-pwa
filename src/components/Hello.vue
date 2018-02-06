@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h2><router-link to="/slokas">View all Slokas</router-link></h2>
     <img src="../assets/desikar.png" alt="Vue.js PWA">
   </div>
 </template>
