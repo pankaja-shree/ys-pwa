@@ -1,10 +1,9 @@
 <template>
   <div id="app">
     <header>
-      <span>Vue.js PWA</span>
+      <span>Yatiraja Saptati App</span>
     </header>
     <main>
-      <img src="./assets/desikar.png" alt="Vue.js PWA">
       <router-view></router-view>
     </main>
   </div>
