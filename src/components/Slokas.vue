@@ -9,8 +9,6 @@
 </template>
 
 <script>
-// import data from '../db.json';
-
 export default {
   name: 'Slokas',
   data() {
