@@ -1,12 +1,11 @@
 <template>
   <div class='slokas'>
     <h1>{{ msg }}</h1>
-    <ul v-for='sloka in slokas' :key='sloka.title'>
-      <li>
-        <h3>{{sloka.title}}</h3>
-        <video :src="sloka.videoUrl"></video>
-      </li>
-    </ul>
+    <select v-model="selectedSlokas">
+      <option disabled value="">Please select one</option>
+      <option v-for='sloka in slokas' :key='sloka.title'>{{sloka.title}}</option>
+    </select>
+    <span>Selected: {{ selectedSlokas }}</span>
   </div>
 </template>
 
@@ -16,6 +15,7 @@ export default {
   data() {
     return {
       msg: 'Slokas of Yatiraja Saptati',
+      selectedSlokas: [],
       slokas: [
         {
           videoUrl: '../assets/sloka01.mp3',
