@@ -1,11 +1,18 @@
 <template>
   <div class='slokas'>
     <h1>{{ msg }}</h1>
-    <select v-model="selectedSlokas">
+    <select v-model="selectedSloka">
       <option disabled value="">Please select one</option>
-      <option v-for='sloka in slokas' :key='sloka.title'>{{sloka.title}}</option>
+      <option v-for='sloka in slokas' :key='sloka.title' v-bind:value='sloka'>{{sloka.title}}</option>
     </select>
-    <span>Selected: {{ selectedSlokas }}</span>
+    <section>
+      Playing: {{ selectedSloka.title }}
+      <p>{{ selectedSloka.description }}</p>
+      <video width="320" height="240" controls>
+        <source :src="selectedSloka.videoUrl" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+    </section>
   </div>
 </template>
 
@@ -15,10 +22,10 @@ export default {
   data() {
     return {
       msg: 'Slokas of Yatiraja Saptati',
-      selectedSlokas: [],
+      selectedSloka: '',
       slokas: [
         {
-          videoUrl: '../assets/sloka01.mp3',
+          videoUrl: '../assets/sloka01.mp4',
           title: 'Sloka 1',
           description: 'An array is a data structure that contains a group of elements. Typically these elements are all of the same data type, such as an integer or string. Arrays are commonly used in computer programs to organize data so that a related set of values can be easily sorted or searched.',
         },
